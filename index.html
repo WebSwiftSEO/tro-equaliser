@@ -26,13 +26,13 @@
   <!-- PWA Support -->
   <link rel="manifest" href="manifest.json" />
   <meta name="theme-color" content="#000000" />
-  <link rel="apple-touch-icon" href="/tro-equaliser/assets/android-chrome-192x192.png" />
+  <link rel="apple-touch-icon" href="/tro-equaliser/assets/favicon-512x512.png" />
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
   <!-- Favicon -->
-  <link rel="icon" href="/tro-equaliser/assets/favicon.ico" type="image/png" />
+  <link rel="icon" href="/tro-equaliser/assets/favicon.ico" type="image/ico" />
 
   
   <title>TroEqualizer v7.3</title>
@@ -127,11 +127,13 @@
   <button id="install-button">📲 Install App</button>
 </div>
 
-<div id="ios-popup" class="ios-popup hidden">
-  <p>📱 iPhone:</p>
-  <p>Tap <img src="/tro-equaliser/assets/favicon-32x32.png" alt="Share Icon"> then “Add to Home Screen”</p>
+  <div id="ios-popup" class="ios-popup hidden">
+  <p>📱 To install TroEqualizer on your iPhone:</p>
+  <p>1. Tap <img src="/tro-equaliser/assets/share-icon-ios.png" alt="Share Icon" width="28" height="28"> (Share)</p>
+  <p>2. Then tap <img src="/tro-equaliser/assets/add-home-icon-ios.png" alt="Add to Home Screen" width="28" height="28"> (Add to Home Screen)</p>
   <button onclick="document.getElementById('ios-popup').classList.add('hidden')">Got it</button>
 </div>
+
 
   <div id="visual-layer"></div>
   <script src="script.js"></script>
