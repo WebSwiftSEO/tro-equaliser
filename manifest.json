@@ -1,0 +1,72 @@
+{
+  "name": "Troanary Equaliser",
+  "short_name": "Tro-Equaliser",
+  "start_url": "/tro-equaliser/?utm_source=homescreen",
+  "id": "/tro-equaliser/?source=pwa",
+  "scope": "/tro-equaliser/",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "portrait",
+  "background_color": "#000000",
+  "theme_color": "#00ffff",
+  "description": "🔊 Tro Equaliser – A Reflective Healing Tool Tro Equaliser is a free, open-source healing tool designed to balance emotional energy using a synchronised system of tone, colour, shape, and mantra.",
+  "icons": [
+    {
+      "src": "/tro-equaliser/assets/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/tro-equaliser/assets/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/tro-equaliser/assets/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/tro-equaliser/assets/maskable-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/tro-equaliser/assets/screenshot1.png",
+      "sizes": "1080x1920",
+      "type": "image/png"
+    },
+    {
+      "src": "/tro-equaliser/assets/screenshot2.png",
+      "sizes": "1080x1920",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Home",
+      "short_name": "Home",
+      "url": "/tro-equaliser/",
+      "icons": [{ "src": "/tro-equaliser/assets/icon-home.png", "sizes": "96x96" }]
+    }
+  ],
+  "share_target": {
+    "action": "/tro-equaliser/share",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "name",
+      "text": "description",
+      "url": "link"
+    }
+  },
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "categories": ["education", "technology", "science"],
+  "lang": "en-AU",
+  "dir": "ltr"
+}
