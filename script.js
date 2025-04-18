@@ -318,3 +318,51 @@ async function reflect() {
 }
 
 window.addEventListener('load', () => startSpin(3000));
+
+let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  const installBtn = document.getElementById('install-button');
+  if (installBtn) installBtn.style.display = 'inline-block';
+});
+
+document.getElementById('install-button')?.addEventListener('click', async () => {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    if (outcome === 'accepted') {
+      deferredPrompt = null;
+    }
+  }
+});
+
+document.getElementById('share-button')?.addEventListener('click', async () => {
+  if (navigator.share) {
+    await navigator.share({
+      title: 'TroEqualizer',
+      text: '🌈 Try this healing tone + emotion balancing tool!',
+      url: window.location.href
+    });
+  } else {
+    alert('Sharing not supported on this browser.');
+  }
+});
+
+function isIos() {
+  return /iphone|ipad|ipod/.test(window.navigator.userAgent.toLowerCase());
+}
+
+function isInStandaloneMode() {
+  return ('standalone' in window.navigator) && window.navigator.standalone;
+}
+
+window.addEventListener('load', () => {
+  if (isIos() && !isInStandaloneMode()) {
+    setTimeout(() => {
+      document.getElementById('ios-popup')?.classList.remove('hidden');
+    }, 2000);
+  }
+});
+
