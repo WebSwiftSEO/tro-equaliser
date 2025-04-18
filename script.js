@@ -321,11 +321,10 @@ window.addEventListener('load', () => startSpin(3000));
 
 let deferredPrompt;
 
-window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
-  const installBtn = document.getElementById('install-button');
-  if (installBtn) installBtn.style.display = 'inline-block';
+document.getElementById('install-button')?.addEventListener('click', () => {
+  if (isIos() && !isInStandaloneMode()) {
+    document.getElementById('ios-popup')?.classList.remove('hidden');
+  }
 });
 
 document.getElementById('install-button')?.addEventListener('click', async () => {
