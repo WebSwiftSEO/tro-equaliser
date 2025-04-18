@@ -17,7 +17,25 @@
   <!-- Mandala Display -->
   <div class="mandala">
     <svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" width="340" height="340">
-      <!-- SVG content as provided -->
+      <defs>
+        <filter id="glowFilter">
+          <feGaussianBlur stdDeviation="2.5" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+
+        <filter id="shapeGlow">
+          <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="white" flood-opacity="0.6"/>
+        </filter>
+
+        <radialGradient id="emotionGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="white" stop-opacity="0.05" />
+          <stop offset="100%" stop-color="black" stop-opacity="1" />
+        </radialGradient>
+      </defs>
+
       <circle cx="120" cy="120" r="100" fill="url(#emotionGlow)" />
       <g stroke="#333" stroke-width="1" fill="none" filter="url(#glowFilter)">
         <circle cx="120" cy="120" r="90"/>
