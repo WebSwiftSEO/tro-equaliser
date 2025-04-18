@@ -90,6 +90,17 @@
   <label id="age-label">🧠 Age: <span id="age-value">36</span></label>
   <input type="range" id="age-slider" min="1" max="121" value="36" />
 
+<div style="margin-top: 12px;">
+  <button id="share-button">🔗 Share</button>
+  <button id="install-button">📲 Install App</button>
+</div>
+
+<div id="ios-popup" class="ios-popup hidden">
+  <p>📱 iPhone:</p>
+  <p>Tap <img src="/tro-equaliser/assets/share-icon.png" alt="Share Icon"> then “Add to Home Screen”</p>
+  <button onclick="document.getElementById('ios-popup').classList.add('hidden')">Got it</button>
+</div>
+
   <div id="visual-layer"></div>
   <script src="script.js"></script>
 </body>
