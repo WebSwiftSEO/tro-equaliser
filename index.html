@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TroEqualizer v7.3</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    #mantra-box {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>✨ TroEqualizer v7.3</h1>
+
+  <!-- Mandala Display -->
+  <div class="mandala">
+    <svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" width="340" height="340">
+      <!-- SVG content as provided -->
+      <circle cx="120" cy="120" r="100" fill="url(#emotionGlow)" />
+      <g stroke="#333" stroke-width="1" fill="none" filter="url(#glowFilter)">
+        <circle cx="120" cy="120" r="90"/>
+        <circle cx="120" cy="120" r="70"/>
+        <circle cx="120" cy="120" r="50"/>
+        <circle cx="120" cy="120" r="30"/>
+      </g>
+      <g stroke="#333" stroke-width="1" stroke-linecap="round" filter="url(#glowFilter)">
+        <line x1="120" y1="10" x2="120" y2="230"/>
+        <line x1="10" y1="120" x2="230" y2="120"/>
+        <line x1="40" y1="40" x2="200" y2="200"/>
+        <line x1="40" y1="200" x2="200" y2="40"/>
+        <line x1="60" y1="10" x2="180" y2="230"/>
+        <line x1="10" y1="60" x2="230" y2="180"/>
+      </g>
+      <g id="triangle-group" stroke-width="4" fill="none" stroke-opacity="1" style="mix-blend-mode: screen;">
+        <polygon points="120,40 200,190 40,190" stroke="gold">
+          <animateTransform attributeName="transform" type="rotate" from="0 120 120" to="360 120 120" dur="3s" begin="indefinite" fill="remove" />
+        </polygon>
+        <polygon points="120,200 50,60 190,60" stroke="cyan">
+          <animateTransform attributeName="transform" type="rotate" from="360 120 120" to="0 120 120" dur="4.5s" begin="indefinite" fill="remove" />
+        </polygon>
+        <polygon points="60,120 180,80 120,200" stroke="lime">
+          <animateTransform attributeName="transform" type="rotate" from="0 120 120" to="360 120 120" dur="6s" begin="indefinite" fill="remove" />
+        </polygon>
+      </g>
+      <g id="emotion-shape-group" transform="translate(120,120) scale(0.5)"></g>
+    </svg>
+  </div>
+
+  <!-- Mantra Box -->
+  <div id="mantra-box">🧘 Waiting for your reflection...</div>
+
+  <!-- Thought Input -->
+  <textarea id="thought-input" placeholder="What's on your mind?" rows="6"></textarea>
+
+  <!-- Tone Selector & Reflect -->
+  <select id="tone-select">
+    <option value="happy">Happy</option>
+    <option value="hopeful">Hopeful</option>
+    <option value="inspired">Inspired</option>
+    <option value="sad">Sad</option>
+    <option value="frustrated">Frustrated</option>
+    <option value="angry">Angry</option>
+  </select>
+  <button id="reflect-btn">🌀 Reflect 🌀</button>
+
+  <!-- Name Input -->
+  <input type="text" id="name-input" placeholder="What is your Name?" />
+
+  <!-- Age Slider -->
+  <label id="age-label">🧠 Age: <span id="age-value">36</span></label>
+  <input type="range" id="age-slider" min="1" max="121" value="36" />
+
+  <div id="visual-layer"></div>
+  <script src="script.js"></script>
+</body>
+</html>
